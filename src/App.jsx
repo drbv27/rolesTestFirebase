@@ -46,7 +46,7 @@ function App() {
 
   return (
     <>
-      {user ? <Home/> : <Login/>}
+      {user ? <Home user={user}/> : <Login/>}
     </>
   )
 }
