@@ -23,7 +23,7 @@ const Login = () => {
         return usuarioFirebase
       });
 
-      console.log(infoUsuario.user.uid);
+      /* console.log(infoUsuario.user.uid); */
       const docuRef = doc(firestore,`usuarios/${infoUsuario.user.uid}`)
       setDoc(docuRef,{correo:email,rol:rol,})
   }
@@ -42,7 +42,7 @@ const Login = () => {
       signInWithEmailAndPassword(auth,email,password)
     }
 
-    console.log(email,password,rol);
+    /* console.log(email,password,rol); */
   }
 
   return (
