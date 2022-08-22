@@ -1,4 +1,5 @@
 import React from 'react'
+import Layout from '../Layout'
 import AdminView from "../components/AdminView"
 import UserView from "../components/UserView"
 
@@ -9,12 +10,15 @@ const auth = getAuth(firebaseApp)
 
 const Home = ({user}) => {
   return (
-    <div>Home
+    <Layout rol={user.rol}>
+      <div>
+        Home
       <button 
       onClick={()=>signOut(auth)}>
         Cerrar Sesión</button>
         {user.rol==="admin" ? <AdminView/> : <UserView/>}
-    </div>
+      </div>
+    </Layout>
   )
 }
 
